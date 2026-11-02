@@ -1,0 +1,19 @@
+/* Proyectos, tema oscuro (también es el respaldo si GNOME no pide una variante). */
+.pr-cuenta { padding-left: 4px; font-weight: bold; color: #f6d32d; }
+
+/* Las filas fijas del menú salen atenuadas por GNOME; el color explícito las devuelve al blanco. */
+.pr-titulo { font-weight: bold; color: #ffffff; padding-right: 16px; }
+.pr-nombre { font-weight: bold; color: #ffffff; padding-right: 12px; }
+.pr-detalle { font-size: 0.85em; color: #c0bfbc; }
+.pr-aviso { color: #f6d32d; }
+
+.pr-punto { width: 8px; height: 8px; border-radius: 4px; margin-right: 4px; background-color: #57e389; }
+.pr-punto-aviso { background-color: #f6d32d; }
+
+/* 44 x 44 px: área cómoda para el clic. */
+.pr-boton { width: 44px; height: 44px; border-radius: 22px; margin-left: 2px; color: #ffffff; }
+.pr-boton:hover, .pr-boton:focus { background-color: rgba(255, 255, 255, 0.12); }
+.pr-boton:focus { box-shadow: inset 0 0 0 2px #78aeed; }
+/* "Más proyectos" tiene fondo más claro: el gris normal no llega a 4.5:1 de contraste. */
+.popup-sub-menu .pr-detalle { color: #deddda; }
+.popup-sub-menu .pr-aviso { color: #f8e45c; }

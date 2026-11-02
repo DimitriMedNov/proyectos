@@ -1,0 +1,8 @@
+{
+  "uuid": "proyectos@dimitrimednov.github.io",
+  "name": "Proyectos",
+  "description": "Tus proyectos de ~/Proyectos en la barra de arriba, del más reciente al más viejo. Abre Claude Code, el editor, el servidor de desarrollo o GitHub con un clic, y avisa qué proyectos tienen trabajo sin subir.",
+  "shell-version": ["48", "49", "50", "51"],
+  "url": "https://github.com/DimitriMedNov/proyectos",
+  "version": 1
+}

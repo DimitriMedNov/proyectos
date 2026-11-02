@@ -1,0 +1,14 @@
+/* Proyectos, tema claro: mismos estilos con colores legibles sobre fondo blanco. */
+.pr-cuenta { padding-left: 4px; font-weight: bold; }
+
+.pr-titulo { font-weight: bold; color: #222226; padding-right: 16px; }
+.pr-nombre { font-weight: bold; color: #222226; padding-right: 12px; }
+.pr-detalle { font-size: 0.85em; color: #5e5c64; }
+.pr-aviso { color: #9c6e03; }
+
+.pr-punto { width: 8px; height: 8px; border-radius: 4px; margin-right: 4px; background-color: #26a269; }
+.pr-punto-aviso { background-color: #e5a50a; }
+
+.pr-boton { width: 44px; height: 44px; border-radius: 22px; margin-left: 2px; color: #222226; }
+.pr-boton:hover, .pr-boton:focus { background-color: rgba(0, 0, 0, 0.08); }
+.pr-boton:focus { box-shadow: inset 0 0 0 2px #1c71d8; }
