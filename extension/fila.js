@@ -63,8 +63,17 @@ export function crearFila(p, acciones) {
         y_align: Clutter.ActorAlign.CENTER});
     columna.add_child(etiqueta(p.nombre, 'pr-nombre'));
     const [texto, clase] = textoEstado(p);
-    columna.add_child(etiqueta(texto, `pr-detalle ${clase}`));
+    const detalle = etiqueta(texto, `pr-detalle ${clase}`);
+    columna.add_child(detalle);
     fila.add_child(columna);
+
+    // Cambia solo el punto y el texto del estado, sin rehacer la fila (sirve con el menú abierto).
+    fila.actualizar = q => {
+        punto.style_class = pendiente(q) || !q.git ? 'pr-punto pr-punto-aviso' : 'pr-punto';
+        const [t, c] = textoEstado(q);
+        detalle.text = t;
+        detalle.style_class = `pr-detalle ${c}`;
+    };
 
     const botones = new St.BoxLayout({y_align: Clutter.ActorAlign.CENTER});
     botones.add_child(boton('utilities-terminal-symbolic', `Abrir Claude Code y el editor en ${p.nombre}`, () => acciones.claude(p)));
