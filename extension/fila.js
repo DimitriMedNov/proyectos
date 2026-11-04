@@ -67,7 +67,7 @@ export function crearFila(p, acciones) {
     fila.add_child(columna);
 
     const botones = new St.BoxLayout({y_align: Clutter.ActorAlign.CENTER});
-    botones.add_child(boton('utilities-terminal-symbolic', `Abrir Claude Code en ${p.nombre}`, () => acciones.claude(p)));
+    botones.add_child(boton('utilities-terminal-symbolic', `Abrir Claude Code y el editor en ${p.nombre}`, () => acciones.claude(p)));
     botones.add_child(boton('text-editor-symbolic', `Abrir ${p.nombre} en el editor`, () => acciones.editor(p)));
     botones.add_child(p.dev
         ? boton('media-playback-start-symbolic', `Prender el servidor de desarrollo de ${p.nombre}`, () => acciones.servidor(p))

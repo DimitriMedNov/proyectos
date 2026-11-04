@@ -8,9 +8,11 @@ const NAVEGADOR = 'brave-browser.desktop';
 // El primer editor instalado de esta lista es el que se abre.
 const EDITORES = ['code', 'code-oss', 'cursor', 'codium', 'zed', 'gnome-text-editor'];
 
+// Ghostty va primero. Ojo con Ptyxis: "--new-window" junto con "-- comando" abre dos ventanas.
 // Cada terminal pide la carpeta y el comando de forma distinta. Se usa la primera que esté instalada.
 const TERMINALES = [
-    ['ptyxis', (dir, cmd) => ['--new-window', '-d', dir, '--', ...cmd]],
+    ['ghostty', (dir, cmd) => [`--working-directory=${dir}`, '-e', ...cmd]],
+    ['ptyxis', (dir, cmd) => ['-d', dir, '--', ...cmd]],
     ['gnome-terminal', (dir, cmd) => [`--working-directory=${dir}`, '--', ...cmd]],
     ['kgx', (dir, cmd) => [`--working-directory=${dir}`, '--', ...cmd]],
     ['kitty', (dir, cmd) => ['--directory', dir, ...cmd]],
@@ -44,7 +46,7 @@ function enTerminal(carpeta, comando) {
             return;
         }
     }
-    throw new Error('No encontré una terminal instalada (ptyxis, gnome-terminal, kgx, kitty, alacritty o wezterm).');
+    throw new Error('No encontré una terminal instalada (ghostty, ptyxis, gnome-terminal, kgx, kitty, alacritty o wezterm).');
 }
 
 export function abrirClaude(carpeta) {
@@ -52,6 +54,7 @@ export function abrirClaude(carpeta) {
     if (!claude)
         throw new Error('No encontré el comando claude. Instala Claude Code o revisa que esté en ~/.local/bin.');
     enTerminal(carpeta, [claude]);
+    abrirEditor(carpeta); // Claude en la terminal y el código al lado, en el editor
 }
 
 export function abrirEditor(carpeta) {
